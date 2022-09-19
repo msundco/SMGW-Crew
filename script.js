@@ -1,5 +1,13 @@
 const source = 'http://192.168.102.181/measurements.xml';
 
+/**  
+ * main
+ */
+getData(source);
+
+/** 
+ * getData: Holt daten mit fetch!
+*/
 async function getData(source) {
 
     const response = await fetch(source);
@@ -10,5 +18,5 @@ async function getData(source) {
     
     let measurementArray = responseXML.getElementsByTagName('Measurement'); 
     console.log(measurementArray);
-   
+
 }
