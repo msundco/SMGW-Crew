@@ -1,4 +1,9 @@
+/**
+ * global vars 
+ */
+
 const source = 'http://192.168.102.181/measurements.xml';
+let dataXML = []; 
 
 /**  
  * main
@@ -19,4 +24,7 @@ async function getData(source) {
     let measurementArray = responseXML.getElementsByTagName('Measurement'); 
     console.log(measurementArray);
 
+    readXML(measurementArray); 
+    createTable(dataXML);
+    
 }
