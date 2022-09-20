@@ -8,7 +8,7 @@ let dataXML = [];
 /**  
  * main
  */
-getData(source);
+setInterval(getData, 1000, source);
 
 /** 
  * getData: Holt daten mit fetch!
@@ -26,5 +26,6 @@ async function getData(source) {
 
     readXML(measurementArray); 
     createTable(dataXML);
+    updateTable(dataXML);
     
 }
