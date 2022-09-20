@@ -27,7 +27,11 @@ function readXML(array){
  * createArray: Erstellt ein 3 dimensionales Array
  */
 
+let array3Dim = [];
+
 function createArray(xmlDoc){
+  
+  
   let x = xmlDoc.getElementsByTagName('Measurement');
   
   let Tabelle = [];
@@ -44,9 +48,18 @@ function createArray(xmlDoc){
     
     Tabelle.push(Spalte);
   }
-    console.log(Tabelle);
 
-    
+
+    if(array3Dim.length > 59) {
+      array3Dim.shift();
+      array3Dim.push(Tabelle);
+    } else {
+      array3Dim.push(Tabelle);
+    }
+
+  
+  //console.log(array3Dim);
+} 
 
 
 /*
@@ -65,7 +78,7 @@ function createArray(xmlDoc){
     '</td></tr>';
     */
     
-  }
+  
   
 
 

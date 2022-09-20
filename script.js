@@ -12,7 +12,7 @@ let dataXML = [];
 /**  
  * main
  */
-//setInterval(getData, 2000, source);
+setInterval(getData, 2000, source);
 getData(source);
 /** 
  * getData: Holt daten mit fetch!
@@ -28,8 +28,9 @@ async function getData(source) {
     let measurementArray = responseXML.getElementsByTagName('Measurement'); 
     //console.log(measurementArray);
 
+    
     createArray(responseXML);
-
+    console.log(array3Dim);
     //readXML(measurementArray); 
     //createTable(dataXML);
     
