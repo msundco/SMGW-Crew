@@ -2,14 +2,18 @@
  * global vars 
  */
 
+//let x = [["Messung"], ["Werte"], ["Einheit"]];
+
+//console.log(x);
+
 const source = 'http://192.168.102.181/measurements.xml';
 let dataXML = []; 
 
 /**  
  * main
  */
+//setInterval(getData, 2000, source);
 getData(source);
-
 /** 
  * getData: Holt daten mit fetch!
 */
@@ -19,12 +23,14 @@ async function getData(source) {
     const responseText = await response.text();
     let parser = new DOMParser();
     let responseXML = parser.parseFromString(responseText, 'text/xml'); 
-    console.log(responseXML)
+    //console.log(responseXML)
     
     let measurementArray = responseXML.getElementsByTagName('Measurement'); 
-    console.log(measurementArray);
+    //console.log(measurementArray);
 
-    readXML(measurementArray); 
-    createTable(dataXML);
+    createArray(responseXML);
+
+    //readXML(measurementArray); 
+    //createTable(dataXML);
     
 }
