@@ -19,8 +19,19 @@ function readXML(array){
        //value[i] = array[i].getAttribute('Value');
     } 
 
-    dataXML = [type, value, unit]; 
-
+    dataXML = [type, value, unit];
+    if (time<10) {
+        timeXML[time] = [dataXML];  
+        console.log(timeXML);
+        time++;
+    }
+    else{
+       timeXML.shift(); 
+       timeXML.push(dataXML); 
+       console.log(timeXML); 
+    }
+     
+   
 }
 
 /**

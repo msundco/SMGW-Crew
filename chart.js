@@ -1,4 +1,4 @@
-<canvas id="chartXML"></canvas>
+
 
 const labels = [
     'January',
