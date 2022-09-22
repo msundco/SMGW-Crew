@@ -1,4 +1,10 @@
 /**
+ * functions.js: Definiert sämtliche Funktionen, die in script.js verwendet werden 
+ */
+
+
+
+/**
  * readXML: Ließt XML Dateien von fetch 
  */
 
@@ -20,6 +26,8 @@ function readXML(array){
     } 
 
     dataXML = [type, value, unit];
+
+/* timeXML 
     if (time<10) {
         timeXML[time] = [dataXML];  
         console.log(timeXML);
@@ -30,7 +38,7 @@ function readXML(array){
        timeXML.push(dataXML); 
        console.log(timeXML); 
     }
-     
+*/     
    
 }
 
