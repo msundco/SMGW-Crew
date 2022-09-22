@@ -4,12 +4,14 @@
  * addChartData: fügt Daten zu Chart hinzu 
  */
 
- function addChartData(chart, label, data) {
+ function addChartData(chart, name, label, data) {
     chart.data.labels.push(label);
     chart.data.datasets.forEach((dataset) => {
         dataset.data.push(data);
-    });
+    }),    
+    chart.data.datasets[0].label = name; 
     chart.update();
+    
 }
 
 

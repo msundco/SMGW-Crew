@@ -6,7 +6,8 @@ const source = 'http://192.168.102.181/measurements.xml';
 let dataXML = []; 
 let timeXML = []; 
 let time = 0; 
-const timespan = 15; 
+const timespan = 60; 
+const refreshtime = 1000; 
 
 
 /**  
@@ -22,7 +23,7 @@ const timespan = 15;
  }
  
 let myChart = initChart(labelInit, dataInit);
-setInterval(getData, 1000, source);
+setInterval(getData, refreshtime, source);
 
 /** 
  * getData: Holt daten mit fetch!
@@ -41,7 +42,7 @@ async function getData(source) {
     readXML(measurementArray); 
     createTable(dataXML);
     updateTable(dataXML);
-    addChartData(myChart, time, dataXML[1][1]);
+    addChartData(myChart, dataXML[0][0], time, dataXML[1][1]);
     shiftChartData(myChart); 
     time++; 
    
